@@ -49,3 +49,23 @@ print(change)
 avg_change = round(sum(change)/len(change),2)
 
 print(avg_change)
+
+# keys = ['a', 'b', 'c']
+# values = [1, 2, 3]
+# dictionary = dict(zip(keys, values))
+# print(dictionary) # {'a': 1, 'b': 2, 'c': 3}
+
+dictionary = dict(zip(months, profit_loss))
+
+print(dictionary)
+
+import operator
+plsort = sorted(dictionary.items(), key=operator.itemgetter(1))
+
+print(plsort)
+
+greatinc = plsort[-1]
+print(greatinc)
+
+greatdec = plsort[0]
+print(greatdec)
