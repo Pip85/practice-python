@@ -36,8 +36,11 @@ print(num_months)
 print(net_profit)
 
 profit_loss2 = profit_loss[1:]
+months2 = months[1:]
 
 print(profit_loss2)
+print(months2)
+
 
 change=[]
 zip_list = zip(profit_loss2, profit_loss)
@@ -55,7 +58,7 @@ print(avg_change)
 # dictionary = dict(zip(keys, values))
 # print(dictionary) # {'a': 1, 'b': 2, 'c': 3}
 
-dictionary = dict(zip(months, profit_loss))
+dictionary = dict(zip(months2, change))
 
 print(dictionary)
 
