@@ -93,9 +93,12 @@ print(sorted_dict.keys())
 
 res = list(sorted_dict.keys())[-1]
 res2 = list(sorted_dict.values())[-1] 
+res3 = list(sorted_dict.keys())[0]
+res4 = list(sorted_dict.values())[0] 
+
+
 # printing initial key
-print("The first key of dictionary is : " + str(res))
-print("The first key of dictionary is : " + str(res2))
+
 
 #[i.split('\t', 1)[0] for i in l]
 # word = plsort.split(",")
@@ -164,8 +167,40 @@ print("The first key of dictionary is : " + str(res2))
 
 
 # Create analysis of profit/loss
-# print("Financial Analysis")
-# print("-----------------------------------")
-# print("Total Months:  $" + str(num_months))
-# print("Average Change:  $" + str(avg_change))
+print("Financial Analysis")
+print("-----------------------------------")
+print("Total Months: " + str(num_months))
+print("Total: $" + str(net_profit))
+print("Average Change:  $" + str(avg_change))
+print("Greatest Increase in Profits:  " + str(res) + " ($" + str(res2) + ")")
+print("Greatest Decrease in Profits:  " + str(res3) + " ($" + str(res4) + ")")
+
+
+
 # print("Greatest Increase in Profits:  " + str((greatinc).split(","))
+# Specify the file to write to
+output_path = os.path.join("Analysis", "new.txt")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w', newline='') as txtfile:
+
+    # Initialize csv.writer
+   # csvwriter = csv.writer(txtfile, delimiter=',')
+    txtwriter = csv.writer(txtfile)
+    # # Write the first row (column headers)
+    # csvwriter.writerow(['First Name', 'Last Name', 'SSN'])
+
+    # Write the second row
+    # csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])
+    
+      
+    line1 = ("Financial Analysis")
+    line2 = ("-----------------------------------")
+
+    txtfile.writelines("Financial Analysis" + "\n")
+    txtfile.writelines("---------------------------------------" + "\n")
+    txtfile.writelines("Total Months: " + str(num_months) + "\n")
+    txtfile.writelines("Total: $" + str(net_profit) + "\n")
+    txtfile.writelines("Average Change:  $" + str(avg_change)+"\n")
+    txtfile.writelines("Greatest Increase in Profits:  " + str(res) + " ($" + str(res2) + ")" + "\n")
+    txtfile.writelines("Greatest Decrease in Profits:  " + str(res3) + " ($" + str(res4) + ")")
