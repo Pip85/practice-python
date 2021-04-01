@@ -72,19 +72,73 @@ dictionary = dict(zip(months2, change))
 
 print(dictionary)
 print(dictionary.keys())
+print(dictionary.values())
 
-
+plsort={}
+monthsort=[]
 # Sort the profit/loss values in ascending order
 import operator
 plsort = sorted(dictionary.items(), key=operator.itemgetter(1))
-sortdictionary={}
-for item in plsort:
-    for k in dictionary.keys():
-        if dictionary[k] == item:
-            sortdictionary[k] = dictionary[k]
-            break
+print(plsort)
 
-print(sortdictionary)
+import operator
+
+#dict1 = {1: 1, 2: 9, 3: 4}
+#sorted_tuples = sorted(dict1.items(), key=operator.itemgetter(1))
+#print(sorted_tuples)  # [(1, 1), (3, 4), (2, 9)]
+sorted_dict = {k: v for k, v in plsort}
+
+print(sorted_dict) # {1: 1, 3: 4, 2: 9}
+print(sorted_dict.keys())
+
+res = list(sorted_dict.keys())[-1]
+res2 = list(sorted_dict.values())[-1] 
+# printing initial key
+print("The first key of dictionary is : " + str(res))
+print("The first key of dictionary is : " + str(res2))
+
+#[i.split('\t', 1)[0] for i in l]
+# word = plsort.split(",")
+# month, profit_loss3 = word.split(',') #word = word.split(',')
+# print(word)
+
+#create variable to hold csv data without the header
+#body2 = plsort[0:0]
+#print(body2)
+# months3 = []
+# profit_loss3 = []
+# data = []
+#    # Move months and profit_loss data into lists
+# for line in body2:
+#     data = line.split(',')
+#     months3.append(data[0])
+#     profit_loss3.append(int(data[1]))
+
+# print(months3)
+# print(profit_loss3)
+
+
+# dictionary_sort = {plsort[x]: plsort[x-1] for x in range(0,len(plsort),2)}
+# print(dictionary_sort)
+
+
+# # res_dct = {lst[i]: lst[i + 1] for i in range(0, len(lst), 2)}
+
+# print(dictionary_sort)
+# print(dictionary_sort.keys())
+# print(dictionary_sort.values())
+
+
+
+
+# sortdictionary={}
+# for item in plsort:
+#     for k in dictionary.keys():
+#         if dictionary[k] == item:
+#             sortdictionary[k] = dictionary[k]
+#             break
+
+# print(sortdictionary)
 
 
 # print(plsort)
