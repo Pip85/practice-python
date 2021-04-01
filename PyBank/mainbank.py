@@ -57,28 +57,61 @@ avg_change = round(sum(change)/len(change),2)
 
 print(avg_change)
 
+# combined_change = zip(months2,profit_loss2)
+# print(combined_change(-1))
+
+
+
+# for key in combined_change:
+#         k = key.split(",")
+#         lst.append((k[0],k[1]))
+
+
 # Pull data without first row into a dictionary
 dictionary = dict(zip(months2, change))
 
 print(dictionary)
+print(dictionary.keys())
+
 
 # Sort the profit/loss values in ascending order
 import operator
 plsort = sorted(dictionary.items(), key=operator.itemgetter(1))
+sortdictionary={}
+for item in plsort:
+    for k in dictionary.keys():
+        if dictionary[k] == item:
+            sortdictionary[k] = dictionary[k]
+            break
 
-print(plsort)
+print(sortdictionary)
+
+
+# print(plsort)
+# dict1 = {1: 1, 2: 9, 3: 4}
+# sorted_values = sorted(dict1.values()) # Sort the values
+# sorted_dict = {}
+
+# for i in sorted_values:
+#     for k in dict1.keys():
+#         if dict1[k] == i:
+#             sorted_dict[k] = dict1[k]
+#             break
 
 # Calculate the greatest increase/decreases in profit/loss by month
-greatinc = (plsort[-1])
-print(greatinc)
+# print(len((plsort).split(":")))
 
-greatdec = plsort[0]
-print(greatdec)
+
+# greatinc = (plsort(key[-1]))
+# print(greatinc)
+
+# greatdec = plsort[0]
+# print(greatdec)
 
 
 # Create analysis of profit/loss
-print("Financial Analysis")
-print("-----------------------------------")
-print("Total Months:  $" + str(num_months))
-print("Average Change:  $" + str(avg_change))
-print("Greatest Increase in Profits:  " + str((greatinc).split(",")))
+# print("Financial Analysis")
+# print("-----------------------------------")
+# print("Total Months:  $" + str(num_months))
+# print("Average Change:  $" + str(avg_change))
+# print("Greatest Increase in Profits:  " + str((greatinc).split(","))
