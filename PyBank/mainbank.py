@@ -40,3 +40,12 @@ profit_loss2 = profit_loss[1:]
 print(profit_loss2)
 
 change=[]
+zip_list = zip(profit_loss2, profit_loss)
+for profit_loss2_i, profit_loss_i in zip_list:
+    change.append(profit_loss2_i - profit_loss_i)
+
+print(change)
+
+avg_change = round(sum(change)/len(change),2)
+
+print(avg_change)
