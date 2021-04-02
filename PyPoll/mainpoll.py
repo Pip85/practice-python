@@ -44,11 +44,61 @@ cand_list = []
 print(cand_list)
 
 
-# for x in candidate:
-#     if x not in cand_list:
-#         cand_list.append(candidate[x])
+voter_roll = dict(zip(candidate, vote))
+print(voter_roll)
 
-# print(cand_list)
+print(voter_roll.keys())
+print(len(voter_roll.keys()))
+
+if key==cand.list:
+    print(voter_roll.keys())
+
+
+
+
+
+
+
+
+# cand1 = []
+
+# cand1 = dict([(key, sum(values)) for key, values in voter_roll.items()])
+
+# print(cand1)
+
+
+# for x in voter_roll:
+#     if voter_roll["name"][x] != cand_list[0]:
+
+
+
+
+
+# print(cand1)
+
+# # cand1=[]
+# [cand1.append({voter_roll["name"][0]})
+
+# # print(voter_roll[
+# print(cand1[0])
+
+
+# for x in voter_roll:
+#     if cand_list[x] == voter_roll[name][x]:
+#         cand1 = voter_roll[name][x], sum(voter_roll[name][x])
+# print(cand1)
+
+
+
+# first_vote = list(
+# print([voter_roll
+
+# cand_dict = {"candidate"
+# # for x in candidate:
+# #     if x not in cand_list:
+# #         cand_list.append(candidate[x])
+
+# # print(cand_list)
 
 
 
@@ -78,9 +128,7 @@ print(cand_list)
 # print(candidate_sum)
 
 
-# Place 3 lists into dictionary
-# voter_roll = {"candidate":"candidate","vote":"vote","county":"county"}
-# print([voter_roll][candidate.keys()])
+
 
 
 
