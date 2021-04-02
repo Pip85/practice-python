@@ -29,29 +29,52 @@ with open(csvpath) as csvfile:
         county.append(row[1])
         candidate.append(row[2])
 
-print(vote[0])
-print(county[0])
-print(candidate[0])
-
-# Calculate total votes
-total_votes = len(vote)
-print(total_votes)
-
-cand_list = []
-
-[cand_list.append(x) for x in candidate if x not in cand_list]
-
-print(cand_list)
+# print(vote[0])
+# print(county[0])
+# print(candidate[0])
+# print(len(candidate[0]))
 
 
-voter_roll = dict(zip(candidate, vote))
-print(voter_roll)
+# # Calculate total votes
+# total_votes = len(vote)
+# print(total_votes)
+# print(len(candidate))
 
-print(voter_roll.keys())
-print(len(voter_roll.keys()))
 
-if key==cand.list:
-    print(voter_roll.keys())
+
+# voter_roll = dict(zip(candidate, vote))
+# print(voter_roll)
+# print(len(voter_roll))
+
+
+
+
+# cand_list = []
+
+# [cand_list.append(x) for x in candidate if x not in cand_list]
+
+# print(cand_list)
+
+
+
+
+
+# # print(dict([(key, len(values) for key, values in voter_roll.items()]))
+# print(dict(voter_roll.keys(), len(voter_roll.values())))
+
+
+# print(voter_roll.keys())
+# print(len(voter_roll.keys()))
+
+# counter = 0
+
+# for key in voter_roll:
+#     if voter_roll[key] == cand_list:
+#         counter += 1
+
+# print(dict([(key, sum(values)) for key, values in voter_roll.items()])
+# # if key==cand.list:
+#     print(voter_roll.keys())
 
 
 
@@ -62,7 +85,7 @@ if key==cand.list:
 
 # cand1 = []
 
-# cand1 = dict([(key, sum(values)) for key, values in voter_roll.items()])
+
 
 # print(cand1)
 
