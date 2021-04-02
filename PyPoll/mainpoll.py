@@ -12,7 +12,6 @@ csvpath = os.path.join('Resources', 'election_data.csv')
 
 # Define variables to hold file attributes in lists
 vote = []
-county = []
 candidate = []
 
 # Open and read csv file
@@ -26,8 +25,32 @@ with open(csvpath) as csvfile:
     # Create for loop to add each file column to a list
     for row in csvreader:
         vote.append(int(row[0]))
-        county.append(row[1])
         candidate.append(row[2])
+
+cand_list = []
+
+[cand_list.append(x) for x in candidate if x not in cand_list]
+
+print(cand_list)
+
+cand1=[]
+
+cand1 = candidate.count(str(cand_list[0]))
+
+print(cand1)
+
+# from collections import Counter
+
+
+# Counter(candidate)
+# print(Counter)
+
+# # counter(candidate)
+# print(counter)
+
+
+
+
 
 # print(vote[0])
 # print(county[0])
