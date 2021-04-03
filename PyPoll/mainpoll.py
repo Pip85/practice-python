@@ -60,32 +60,18 @@ for candidate, vote in cand_total.items():
        winner = candidate
      
 # Create list to hold the percentage of votes for each candidate
-share=[]
+share_list=[]
 
 for index in range(len(cand_votes)):
-    share.append(cand_votes[index]/total_votes)
+    share_list.append(cand_votes[index]/total_votes)
     
-# Format share list contents as percentages with 3 decimal places
-
-percent0 = format((share[0]*100),'.3f')
-percent1 = format((share[1]*100),'.3f')
-percent2 = format((share[2]*100),'.3f')
-percent3 = format((share[3]*100),'.3f')
-
-# Print results to terminal
+# Begin printing analysis to terminal
 print("Election Results")
 lines()
 print(f'Total Votes: {total_votes}')
 lines()
-print(f'{cand_list[0]} : {percent0}% ({cand_votes[0]})')
-print(f'{cand_list[1]} : {percent1}% ({cand_votes[1]})')
-print(f'{cand_list[2]} : {percent2}% ({cand_votes[2]})')
-print(f'{cand_list[3]} : {percent3}% ({cand_votes[3]})')
-lines()
-print("Winner:  " + winner)
-lines()
 
-# Specify the file to write to
+# Specify the file path to write analysis to text file
 output_path = os.path.join("Analysis", "new.txt")
 
 # Open the file using "write" mode. Specify the variable to hold the contents.
@@ -99,10 +85,21 @@ with open(output_path, 'w', newline='') as txtfile:
     lines_write()
     txtfile.writelines(f'Total Votes: {total_votes} \n')
     lines_write()
-    txtfile.writelines(f'{cand_list[0]} : {percent0}% ({cand_votes[0]}) \n')
-    txtfile.writelines(f'{cand_list[1]} : {percent1}% ({cand_votes[1]}) \n')
-    txtfile.writelines(f'{cand_list[2]} : {percent2}% ({cand_votes[2]}) \n')
-    txtfile.writelines(f'{cand_list[3]} : {percent3}% ({cand_votes[3]}) \n')
+
+# Create for loop to format the percentage data in share_list and print those results to the terminal and the text file
+    for index, share in enumerate(share_list):
+        percent = format((share*100),'.3f')
+        candidate_name = (cand_list[index])
+        candidate_vote = (cand_votes[index])
+        print(f'{candidate_name} : {percent}% ({candidate_vote})')
+        txtfile.writelines(f'{candidate_name} : {percent}% ({candidate_vote}) \n')
+
+# Complete printing analysis to terminal
+    lines()
+    print("Winner:  " + winner)
+    lines()
+
+# Complete printing analysis to the text file    
     lines_write()
     txtfile.writelines("Winner:  " + winner + "\n")
     lines_write()

@@ -30,7 +30,7 @@ with open(csvpath) as csvfile:
 num_months = len(months)
 net_profit = sum(profit_loss)
 
-# Create new lists to hold data from months and profit_loss lists less the first row of data
+# Create new lists to hold data from profit_loss list less the first row of data
 profit_loss2 = profit_loss[1:]
 months2 = months[1:]
 
