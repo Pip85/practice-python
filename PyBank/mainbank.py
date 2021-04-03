@@ -14,8 +14,7 @@ with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
     csv_header = next(csvreader)
-    print(csv_header)
-
+    
     lines = csvfile.readlines()
     
     # create variable to hold csv data without the header
@@ -50,17 +49,13 @@ dictionary = dict(zip(months2, change))
 
 # Create list and new dictionary to sort first dictionary by change values to determine greatest and least profit/loss change.
 plsort={}
-monthsort=[]
 
 # Sort the profit/loss values in ascending order
 import operator
 plsort = sorted(dictionary.items(), key=operator.itemgetter(1))
-print(plsort)
 
-# import operator
 # Holds sorted dictionary data
 sorted_dict = {k: v for k, v in plsort}
-
 
 profit_month = list(sorted_dict.keys())[-1]
 profit = list(sorted_dict.values())[-1] 
