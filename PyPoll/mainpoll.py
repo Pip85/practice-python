@@ -13,6 +13,10 @@ csvpath = os.path.join('Resources', 'election_data.csv')
 # Define variables to hold file attributes in lists
 vote = []
 candidate = []
+list1 = []
+count = []
+
+column = 1
 
 # Open and read csv file
 with open(csvpath) as csvfile:
@@ -26,6 +30,15 @@ with open(csvpath) as csvfile:
     for row in csvreader:
         vote.append(int(row[0]))
         candidate.append(row[2])
+        list1.append(row[2])
+        list1.append(int(row[0]))
+
+print(len(candidate))
+
+dictionary={}
+for x, y in zip(candidate, vote):
+    dictionary.setdefault(x, []).append(y)
+
 
 cand_list = []
 
@@ -33,11 +46,146 @@ cand_list = []
 
 print(cand_list)
 
-cand1=[]
+# i = cand_list[0]
 
-cand1 = candidate.count(str(cand_list[0]))
+# summary_list = count(x == i for x in dictionary.values())
+# print(summary_list)
 
-print(cand1)
+
+
+# # dictionary = dict(zip(candidate,vote))
+# for key in candidate:
+#     for value in vote:
+#         dictionary[key] = value
+
+# dictionary = {"candidate":"candidate", "vote_id":"vote"}
+
+# dictionary = {key:value for key, value in zip(candidate, vote)}
+# print(len(dictionary.keys()))
+# print(dictionary.values())
+
+
+
+
+# # dictionary = dict(zip(candidate, vote))
+
+
+# vote_list = []
+# [vote_list.append(x) for 
+
+cand_votes=[]
+
+cand_votes.append(candidate.count(str(cand_list[0])))
+cand_votes.append(candidate.count(str(cand_list[1])))
+cand_votes.append(candidate.count(str(cand_list[2])))
+cand_votes.append(candidate.count(str(cand_list[3])))
+
+
+print(cand_votes[0])
+print(cand_votes[1])
+print(cand_votes[2])
+print(cand_votes[3])
+
+dictionary2={}
+for x, y in zip(cand_list, cand_votes):
+    dictionary2.setdefault(x, []).append(y)
+
+print(dictionary2.keys())
+print(dictionary2.values())
+
+for key,val in dictionary2.items():
+    print(key, val)
+    
+all_votes=dictionary2.values()
+max = max(all_votes)
+print(max)
+
+for candidate, vote in dictionary2.items():
+    if vote==max:
+        print(candidate)
+
+# winner = dictionary2.index(str(max))
+# print(winner)
+
+
+# dictionary2.get(str(cand_list[0]))
+# pair_list= []
+
+# for pair in dictionary2.items():
+#     pair_list.append(str((pair))
+#     # print(str(pair.split(",")))
+
+# print((str(pair_list[0]).split(","))
+
+
+
+# print(str(dictionary2.keys[0]) + str(dictionary2.values[0])) 
+
+# total_votes = (len(cand_votes))
+# print(total_votes)
+
+# max_votes = max(cand_votes)
+
+
+# share=[]
+
+
+
+# share.append(cand_votes[0]/total_votes)
+# share.append(cand_votes[1]/total_votes)
+# share.append(cand_votes[2]/total_votes)
+# share.append(cand_votes[3]/total_votes)
+
+# percent1 = round((share[0]),3)
+# percent2 = round((share[1]),3)
+# percent3 = round((share[2]),3)
+# percent4 = round((share[3]),3)
+
+# print("Election Results")
+# print("-----------------------------------")
+# print("Total Votes: " + str(total_votes))
+# print("-----------------------------------")
+# print(str(cand_list[0]) + ":   " + str(percent1) +"%   (" + str(cand_votes[0]) + ")")
+# print(str(cand_list[1]) + ":   " + str(percent2) +"%   (" + str(cand_votes[1]) + ")")
+# print(str(cand_list[2]) + ":   " + str(percent3) +"%   (" + str(cand_votes[2]) + ")")
+# print(str(cand_list[3]) + ":   " + str(percent4) +"%   (" + str(cand_votes[3]) + ")")
+# print("-----------------------------------")
+# print("Winner:  " + 
+# print("Average Change:  $" + str(avg_change))
+# print("Greatest Increase in Profits:  " + str(res) + " ($" + str(res2) + ")")
+# print("Greatest Decrease in Profits:  " + str(res3) + " ($" + str(res4) + ")")
+
+
+
+# # print("Greatest Increase in Profits:  " + str((greatinc).split(","))
+# # Specify the file to write to
+# output_path = os.path.join("Analysis", "new.txt")
+
+# # Open the file using "write" mode. Specify the variable to hold the contents
+# with open(output_path, 'w', newline='') as txtfile:
+
+#     # Initialize csv.writer
+#    # csvwriter = csv.writer(txtfile, delimiter=',')
+#     txtwriter = csv.writer(txtfile)
+#     # # Write the first row (column headers)
+#     # csvwriter.writerow(['First Name', 'Last Name', 'SSN'])
+
+#     # Write the second row
+#     # csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])
+    
+      
+#     line1 = ("Financial Analysis")
+#     line2 = ("-----------------------------------")
+
+#     txtfile.writelines("Financial Analysis" + "\n")
+#     txtfile.writelines("---------------------------------------" + "\n")
+#     txtfile.writelines("Total Months: " + str(num_months) + "\n")
+#     txtfile.writelines("Total: $" + str(net_profit) + "\n")
+#     txtfile.writelines("Average Change:  $" + str(avg_change)+"\n")
+#     txtfile.writelines("Greatest Increase in Profits:  " + str(res) + " ($" + str(res2) + ")" + "\n")
+#     txtfile.writelines("Greatest Decrease in Profits:  " + str(res3) + " ($" + str(res4) + ")")
+
+
 
 # from collections import Counter
 
