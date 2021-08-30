@@ -1,4 +1,4 @@
-# **python-analysis-bank-voting**<br>
+# **practice-python**<br>
 
 Student project - analyze financial bank data and voter data using Python.<br>
 
